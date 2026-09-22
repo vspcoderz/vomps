@@ -30,6 +30,12 @@ export const themes: VompsTheme[] = [
     description:
       "LabyMod-inspired client look: deep navy surfaces, brand blue #3f61ea, chunky block controls.",
   },
+  {
+    id: "cording",
+    name: "Cording",
+    description:
+      "Discord-inspired dark UI: blurple #5865F2, guild rail #1e1f22, chat #313338, rounded panels.",
+  },
 ];
 
 export const defaultThemeId: string =

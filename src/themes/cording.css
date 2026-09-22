@@ -1,0 +1,61 @@
+/*
+ * vomps theme: cording  (theme 3 of 5–10)
+ * --------------------------------------------------
+ * "Cording" — Discord-inspired dark UI.
+ *
+ * Scraped from https://discord.com/branding (Sep 2026):
+ *   Blurple #5865F2, Light Blurple #E0E3FF, Black #000000
+ * plus the Discord client dark palette (inspected via web app / design tokens):
+ *   --bg-primary #313338 (chat), --bg-secondary #2b2d31 (sidebar),
+ *   --bg-tertiary #1e1f22 (guild rail), --bg-floating #232428,
+ *   text #f2f3f5 / #b5bac1 / #949ba4, border #3f4147 / #404249,
+ *   status online #23a559 idle #f0b132 dnd #f23f42 streaming #593695.
+ *
+ * Mapping keeps vomps core tokens so every existing component re-skins.
+ * Extra --cord-* tokens power the Cording component set.
+ */
+
+:root[data-theme="cording"] {
+  color-scheme: dark;
+
+  --background: #1e1f22;
+  --foreground: #f2f3f5;
+
+  --card: #2b2d31;
+  --card-foreground: #f2f3f5;
+
+  --popover: #313338;
+  --popover-foreground: #f2f3f5;
+
+  /* Discord blurple */
+  --primary: #5865f2;
+  --primary-foreground: #ffffff;
+
+  --secondary: #404249;
+  --secondary-foreground: #f2f3f5;
+
+  --muted: #404249;
+  --muted-foreground: #949ba4;
+
+  --accent: #35373c;
+  --accent-foreground: #f2f3f5;
+
+  --destructive: #da373c;
+  --destructive-foreground: #ffffff;
+
+  --border: #3f4147;
+  --input: #404249;
+  --ring: #5865f2;
+
+  --radius: 0.5rem;
+
+  /* Cording extension tokens (mapped in tokens.css) */
+  --cord-online: #23a559;
+  --cord-idle: #f0b132;
+  --cord-dnd: #f23f42;
+  --cord-streaming: #593695;
+  --cord-guild: #1e1f22;
+  --cord-channel: #2b2d31;
+  --cord-mention: #3a3f6d;
+  --cord-light-blurple: #e0e3ff;
+}

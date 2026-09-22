@@ -302,6 +302,94 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "cord-button",
+      "title": "CordButton",
+      "description": "Discord blurple button. Variants primary/secondary/success/danger/outline/ghost/link/light, pill option. Token-driven (--primary #5865F2).",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-button.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-card",
+      "title": "CordCard",
+      "description": "Discord panel + message row. Surfaces --card/--popover/--cord-guild, CordMessage with mention bar, avatar, timestamp.",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-card.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-channel",
+      "title": "CordChannel",
+      "description": "Discord sidebar channel row + shells. Variants active/unread, icons hash/voice/announcement, badge, left pill. Plus CordSidebarShell + CordGuildRail.",
+      "type": "registry:component",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-channel.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-badge",
+      "title": "CordBadge",
+      "description": "Discord role/presence pill. Variants online/idle/dnd/streaming + default/secondary/outline, dot, plus CordStatusDot.",
+      "type": "registry:component",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-badge.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-guild",
+      "title": "CordGuild",
+      "description": "Discord guild rail icon (squircle\u2192circle hover, left pill for active/unread). CordGuild + CordGuildRail.",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-guild.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ],
   "name": "vomps"

@@ -57,4 +57,14 @@
   --mine-amethyst: #a672dc;
   --mine-well: #08080d;
   --mine-edge: #000000;
+
+  /* Cording extension tokens — fallbacks so Cording kit renders in vomp-dark */
+  --cord-online: #23a559;
+  --cord-idle: #f0b132;
+  --cord-dnd: #f23f42;
+  --cord-streaming: #593695;
+  --cord-guild: #13131a;
+  --cord-channel: #17171f;
+  --cord-mention: #2a2d6a;
+  --cord-light-blurple: #e0e3ff;
 }

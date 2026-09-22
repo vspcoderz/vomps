@@ -39,6 +39,16 @@
   --color-mine-well: var(--mine-well);
   --color-mine-edge: var(--mine-edge);
 
+  /* Cording extension tokens */
+  --color-cord-online: var(--cord-online);
+  --color-cord-idle: var(--cord-idle);
+  --color-cord-dnd: var(--cord-dnd);
+  --color-cord-streaming: var(--cord-streaming);
+  --color-cord-guild: var(--cord-guild);
+  --color-cord-channel: var(--cord-channel);
+  --color-cord-mention: var(--cord-mention);
+  --color-cord-light-blurple: var(--cord-light-blurple);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

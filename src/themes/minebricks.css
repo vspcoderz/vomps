@@ -73,4 +73,14 @@
   --mine-amethyst: #a672dc;
   --mine-well: #060911;
   --mine-edge: #04060b;
+
+  /* Cording fallbacks when minebricks theme renders Cording kit */
+  --cord-online: #23a559;
+  --cord-idle: #f0b132;
+  --cord-dnd: #f23f42;
+  --cord-streaming: #593695;
+  --cord-guild: #0e111b;
+  --cord-channel: #161a25;
+  --cord-mention: #2a2d6a;
+  --cord-light-blurple: #e0e3ff;
 }

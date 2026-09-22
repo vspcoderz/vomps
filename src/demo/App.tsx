@@ -51,6 +51,23 @@ import {
   MineWell,
   MineXpShelf,
 } from "@/components/minebricks";
+import {
+  CordBadge,
+  CordButton,
+  CordCard,
+  CordCardContent,
+  CordCardDescription,
+  CordCardFooter,
+  CordCardHeader,
+  CordCardTitle,
+  CordChannel,
+  CordChannelList,
+  CordGuild,
+  CordGuildRail,
+  CordMessage,
+  CordSidebarShell,
+  CordStatusDot,
+} from "@/components/cording";
 import { applyTheme, defaultThemeId, themes } from "@/themes/manifest";
 
 function Section({
@@ -406,6 +423,112 @@ export default function App() {
               <MineProgress value={76} variant="amethyst" />
               <MineXpShelf filled={7} segments={10} variant="grass" />
               <MineXpShelf filled={4} segments={10} variant="diamond" />
+            </div>
+          </Section>
+
+          {/* ── Cording (Discord-inspired) ── */}
+          <div className="rounded-xl border border-dashed bg-cord-guild/20 p-4">
+            <div className="mb-1 flex items-center gap-2">
+              <span className="text-xs font-bold tracking-[0.18em] text-primary">CORDING</span>
+              <span className="text-xs text-muted-foreground">
+                Discord-inspired kit — blurple, guild rail &amp; channel list
+              </span>
+              <CordBadge variant="online" showDot>
+                online
+              </CordBadge>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Scraped from{" "}
+              <a className="underline underline-offset-4 hover:text-foreground" href="https://discord.com/branding" target="_blank" rel="noreferrer">
+                discord.com/branding
+              </a>
+              : Blurple #5865F2, Light #E0E3FF + client dark surfaces #1e1f22/#2b2d31/#313338. Switch to{" "}
+              <span className="font-semibold text-foreground">Cording</span> for the full Discord shell.
+            </p>
+          </div>
+
+          <Section title="CordButton" description="blurple primary · pill · success/danger">
+            <CordButton>Primary</CordButton>
+            <CordButton variant="secondary">Secondary</CordButton>
+            <CordButton variant="success">Success</CordButton>
+            <CordButton variant="danger">Danger</CordButton>
+            <CordButton variant="outline">Outline</CordButton>
+            <CordButton variant="ghost">Ghost</CordButton>
+            <CordButton variant="light">Light Blurple</CordButton>
+            <CordButton pill>Rounded Pill</CordButton>
+            <CordButton size="sm">Small</CordButton>
+            <CordButton size="lg">Large</CordButton>
+          </Section>
+
+          <Section title="CordCard + CordMessage" description="panel · message row · mention">
+            <CordCard className="w-[380px]">
+              <CordCardHeader>
+                <CordCardTitle>Welcome to #general</CordCardTitle>
+                <CordCardDescription>This is the start of the channel.</CordCardDescription>
+              </CordCardHeader>
+              <CordCardContent className="space-y-1 p-0">
+                <CordMessage username="vspcoderz" timestamp="Today at 17:40">
+                  heyo — shipping the Cording kit rn ✨
+                </CordMessage>
+                <CordMessage username="Clyde" timestamp="Today at 17:41" mention>
+                  <span className="rounded bg-primary/20 px-1 font-medium text-primary">@vspcoderz</span> nice — blurple looks good in every season
+                </CordMessage>
+              </CordCardContent>
+              <CordCardFooter className="mt-3">
+                <Input placeholder="Message #general" className="bg-cord-guild border-0" />
+                <CordButton size="sm">Send</CordButton>
+              </CordCardFooter>
+            </CordCard>
+          </Section>
+
+          <Section title="CordChannel + CordGuild" description="sidebar shells · guild rail">
+            <div className="flex gap-3">
+              <CordGuildRail>
+                <CordGuild active>🏠</CordGuild>
+                <CordGuild unread>V</CordGuild>
+                <CordGuild>◒</CordGuild>
+              </CordGuildRail>
+              <CordSidebarShell>
+                <div className="px-2 py-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  Text Channels
+                </div>
+                <CordChannelList>
+                  <CordChannel active># general</CordChannel>
+                  <CordChannel unread># changelog</CordChannel>
+                  <CordChannel># questions</CordChannel>
+                  <CordChannel icon="voice">Voice Lobby</CordChannel>
+                  <CordChannel icon="announcement" badge={3}>
+                    announcements
+                  </CordChannel>
+                </CordChannelList>
+              </CordSidebarShell>
+            </div>
+          </Section>
+
+          <Section title="CordBadge / Status" description="role pills · presence dots">
+            <div className="flex flex-wrap items-center gap-2">
+              <CordBadge variant="online" showDot>
+                Online
+              </CordBadge>
+              <CordBadge variant="idle" showDot>
+                Idle
+              </CordBadge>
+              <CordBadge variant="dnd" showDot>
+                Do Not Disturb
+              </CordBadge>
+              <CordBadge variant="streaming" showDot>
+                Streaming
+              </CordBadge>
+              <CordBadge>Blurple</CordBadge>
+              <CordBadge variant="secondary">Secondary</CordBadge>
+              <div className="flex items-center gap-2 rounded-full border bg-card px-3 py-1">
+                <CordStatusDot status="online" />
+                <CordStatusDot status="idle" />
+                <CordStatusDot status="dnd" />
+                <CordStatusDot status="streaming" />
+                <CordStatusDot status="offline" />
+                <span className="text-xs text-muted-foreground">presence</span>
+              </div>
             </div>
           </Section>
         </main>
