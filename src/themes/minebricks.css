@@ -20,6 +20,11 @@
  *   --radius-card:8px  --radius-slot:6px  --radius-hero:16px
  *   --lui-font-pixel:"Monocraft",ui-monospace,monospace
  *   <meta name="theme-color" content="#141515">
+ * typography (laby.net _next/static/css + html class):
+ *   site default = Geist Sans (Next.js geist_a71539c9) + Geist Mono;
+ *   minecraft pixel mode = Monocraft,monospace; headings in pixel mode
+ *   letter-spacing .02em body / .05em headings; hero tight tracking;
+ *   body antialiased, tab-size 4, line-height 1.5.
  *
  * Mapping below translates those surfaces into vomps core tokens so EVERY
  * existing component re-skins with zero component edits. The extra
@@ -27,6 +32,15 @@
  * (`src/components/minebricks/`) and are also defined (with fallbacks)
  * in `vomp-dark.css` so MineBricks render in every theme.
  */
+
+@font-face {
+  font-family: "Monocraft";
+  src:
+    url("/fonts/Monocraft.woff2") format("woff2"),
+    url("/fonts/Monocraft.otf") format("opentype");
+  font-display: swap;
+  font-weight: 400 700;
+}
 
 :root[data-theme="minebricks"] {
   color-scheme: dark;
@@ -62,8 +76,17 @@
   --input: #424a5e;
   --ring: #3f61ea;
 
-  /* Laby card radius */
+  /* Laby card radius + type scale */
   --radius: 0.5rem;
+
+  /* typography — Laby = Geist Sans default, Monocraft pixel */
+  --font-sans:
+    "Geist Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-pixel: "Monocraft", ui-monospace, monospace;
+  --font-display: var(--font-sans);
+  --tracking-display: -0.02em;
 
   /* MineBricks extension tokens (mapped in tokens.css) */
   --mine-grass: #54bf5c;

@@ -390,6 +390,323 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "mine-input",
+      "title": "MineInput",
+      "description": "Laby slot-styled input. Well fill --mine-well, edge --mine-edge, inset shadow, 6px radius, Geist Sans.",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/minebricks/mine-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mine-textarea",
+      "title": "MineTextarea",
+      "description": "Mine block textarea. Same well/edge as MineInput, 72px min-h.",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/minebricks/mine-textarea.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mine-label",
+      "title": "MineLabel",
+      "description": "Label with pixel variant (Monocraft 10px tracked uppercase).",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-label",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/minebricks/mine-label.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mine-select",
+      "title": "MineSelect",
+      "description": "Select with well trigger and popover. Portal, Check indicator.",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-select",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/minebricks/mine-select.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mine-switch",
+      "title": "MineSwitch",
+      "description": "Lever switch: track --mine-well, checked --mine-grass.",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/minebricks/mine-switch.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mine-tabs",
+      "title": "MineTabs",
+      "description": "Tabs with well rail (6px) and primary active.",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-tabs"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/minebricks/mine-tabs.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mine-dialog",
+      "title": "MineDialog",
+      "description": "Modal with mine-edge border and Monocraft title, well shadow.",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/minebricks/mine-dialog.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mine-tooltip",
+      "title": "MineTooltip",
+      "description": "Tooltip in well/edge with 6px radius.",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/minebricks/mine-tooltip.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "mine-skeleton",
+      "title": "MineSkeleton",
+      "description": "Well-colored pulsing skeleton.",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/minebricks/mine-skeleton.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-input",
+      "title": "CordInput",
+      "description": "Discord input: bg --cord-channel (#2b2d31), 15px gg sans, 10h.",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-input.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-textarea",
+      "title": "CordTextarea",
+      "description": "Discord textarea, same channel bg, 72px.",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-textarea.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-label",
+      "title": "CordLabel",
+      "description": "Discord uppercase label: 12px bold tracking-wide muted.",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-label"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-label.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-select",
+      "title": "CordSelect",
+      "description": "Discord select: channel bg trigger, popover.",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-select",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-select.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-switch",
+      "title": "CordSwitch",
+      "description": "Discord toggle: off input, on cord-online.",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-switch.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-tabs",
+      "title": "CordTabs",
+      "description": "Discord underline tabs: active border-primary.",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-tabs"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-tabs.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-dialog",
+      "title": "CordDialog",
+      "description": "Discord modal: card bg, guild footer, Ginto display title.",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-dialog.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-tooltip",
+      "title": "CordTooltip",
+      "description": "Discord black (#111214) tooltip.",
+      "type": "registry:component",
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-tooltip.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "cord-skeleton",
+      "title": "CordSkeleton",
+      "description": "Channel-colored pulsing skeleton.",
+      "type": "registry:component",
+      "dependencies": [],
+      "registryDependencies": [
+        "utils"
+      ],
+      "files": [
+        {
+          "path": "src/components/cording/cord-skeleton.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ],
   "name": "vomps"

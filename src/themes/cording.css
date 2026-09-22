@@ -10,6 +10,11 @@
  *   --bg-tertiary #1e1f22 (guild rail), --bg-floating #232428,
  *   text #f2f3f5 / #b5bac1 / #949ba4, border #3f4147 / #404249,
  *   status online #23a559 idle #f0b132 dnd #f23f42 streaming #593695.
+ * typography (discord.com / discord app):
+ *   marketing = Poppins + Press Start 2P (branding zip), app = "gg sans"
+ *   (replaced Whitney), display = "ABC Ginto Nord" / "Ginto Nord" 800;
+ *   app body 16px/20px, headings Ginto Nord bold, code = Consolas/monospace;
+ *   letter-spacing tight for display, antialiased + optimizeLegibility.
  *
  * Mapping keeps vomps core tokens so every existing component re-skins.
  * Extra --cord-* tokens power the Cording component set.
@@ -48,6 +53,15 @@
   --ring: #5865f2;
 
   --radius: 0.5rem;
+
+  /* typography — Discord = gg sans (fallback Whitney/Inter), Ginto Nord display */
+  --font-sans:
+    "gg sans", "Noto Sans", Whitney, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  --font-mono: Consolas, ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: "ABC Ginto Nord", "Ginto Nord", "gg sans", sans-serif;
+  --font-pixel: var(--font-mono);
+  --tracking-display: -0.01em;
 
   /* Cording extension tokens (mapped in tokens.css) */
   --cord-online: #23a559;

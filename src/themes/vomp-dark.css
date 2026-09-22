@@ -47,6 +47,15 @@
 
   --radius: 0.625rem;
 
+  /* typography — original vomps: clean sans + mono */
+  --font-sans:
+    Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-display: var(--font-sans);
+  --font-pixel: var(--font-mono);
+  --tracking-display: -0.02em;
+
   /* MineBricks extension tokens — same hues as the minebricks theme so the
      MineBricks component set renders in vomp-dark too. Well/edge are
      shifted to match this theme's blue-black base. */

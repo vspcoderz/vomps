@@ -45,9 +45,33 @@ import {
   MineCardFooter,
   MineCardHeader,
   MineCardTitle,
+  MineDialog,
+  MineDialogContent,
+  MineDialogDescription,
+  MineDialogHeader,
+  MineDialogTitle,
+  MineDialogTrigger,
+  MineInput,
+  MineLabel,
   MineProgress,
+  MineSelect,
+  MineSelectContent,
+  MineSelectItem,
+  MineSelectTrigger,
+  MineSelectValue,
+  MineSkeleton,
   MineSlot,
   MineSlotGrid,
+  MineSwitch,
+  MineTabs,
+  MineTabsContent,
+  MineTabsList,
+  MineTabsTrigger,
+  MineTextarea,
+  MineTooltip,
+  MineTooltipContent,
+  MineTooltipProvider,
+  MineTooltipTrigger,
   MineWell,
   MineXpShelf,
 } from "@/components/minebricks";
@@ -62,11 +86,35 @@ import {
   CordCardTitle,
   CordChannel,
   CordChannelList,
+  CordDialog,
+  CordDialogContent,
+  CordDialogDescription,
+  CordDialogHeader,
+  CordDialogTitle,
+  CordDialogTrigger,
   CordGuild,
   CordGuildRail,
+  CordInput,
+  CordLabel,
   CordMessage,
+  CordSelect,
+  CordSelectContent,
+  CordSelectItem,
+  CordSelectTrigger,
+  CordSelectValue,
   CordSidebarShell,
+  CordSkeleton,
   CordStatusDot,
+  CordSwitch,
+  CordTabs,
+  CordTabsContent,
+  CordTabsList,
+  CordTabsTrigger,
+  CordTextarea,
+  CordTooltip,
+  CordTooltipContent,
+  CordTooltipProvider,
+  CordTooltipTrigger,
 } from "@/components/cording";
 import { applyTheme, defaultThemeId, themes } from "@/themes/manifest";
 
@@ -153,6 +201,32 @@ export default function App() {
         </header>
 
         <main className="space-y-8">
+          <Section title="Typography" description="theme fonts — sans / display / mono / pixel">
+            <div className="grid w-full gap-4">
+              <div className="grid gap-1">
+                <span className="text-xs font-semibold text-muted-foreground">--font-sans · body (Geist Sans / gg sans)</span>
+                <p className="font-sans text-sm leading-6">
+                  The quick brown fox jumps — 16px / 1.5 · body copy uses <code className="font-mono text-xs bg-muted px-1 py-0.5 rounded">var(--font-sans)</code> per theme.
+                </p>
+              </div>
+              <div className="grid gap-1">
+                <span className="text-xs font-semibold text-muted-foreground">--font-display · headings (Ginto Nord / Geist Sans)</span>
+                <p className="font-display text-xl font-bold tracking-display">Group chat that&apos;s all fun &amp; games</p>
+                <p className="font-display text-base font-semibold">One Client. Everything included.</p>
+              </div>
+              <div className="grid gap-1">
+                <span className="text-xs font-semibold text-muted-foreground">--font-mono · code</span>
+                <code className="font-mono text-xs bg-muted px-2 py-1 rounded">npm i @vomps/minebricks — Geist Mono / Consolas</code>
+              </div>
+              <div className="grid gap-1">
+                <span className="text-xs font-semibold text-muted-foreground">--font-pixel · Monocraft (Laby)</span>
+                <p className="font-pixel text-sm tracking-wide">PIXEL MODE — AAA Minecraft 1.8 → 1.21</p>
+                <p className="font-pixel text-[11px] tracking-[0.08em] text-muted-foreground">letter-spacing .02em body / .05em headings (minecraft-font-mode)</p>
+              </div>
+              <p className="text-xs text-muted-foreground">Switch themes in the picker — vomp-dark (Inter) → minebricks (Geist/MonoCraft) → cording (gg sans/Ginto Nord) re-skins type instantly via <code className="font-mono text-xs">var(--font-*)</code>.</p>
+            </div>
+          </Section>
+
           <Section title="Button" description="6 variants, 4 sizes">
             <Button>Default</Button>
             <Button variant="secondary">Secondary</Button>
@@ -426,6 +500,60 @@ export default function App() {
             </div>
           </Section>
 
+          <Section title="MineForm · MineTabs · MineDialog" description="full kit: input/textarea/select/switch + tabs + dialog/tooltip">
+            <div className="grid w-[360px] gap-4">
+              <div className="grid gap-2">
+                <MineLabel pixel>Server IP — pixel label</MineLabel>
+                <MineInput placeholder="mc.hypixel.net" defaultValue="play.labymod.net" />
+              </div>
+              <div className="grid gap-2">
+                <MineLabel>Addon description</MineLabel>
+                <MineTextarea placeholder="Describe your addon…" defaultValue="LabyMod 4 — more mods, more performance." />
+              </div>
+              <div className="grid gap-2">
+                <MineLabel>Version</MineLabel>
+                <MineSelect defaultValue="1-21-1">
+                  <MineSelectTrigger><MineSelectValue /></MineSelectTrigger>
+                  <MineSelectContent>
+                    <MineSelectItem value="1-21-1">1.21.1</MineSelectItem>
+                    <MineSelectItem value="1-20-1">1.20.1</MineSelectItem>
+                    <MineSelectItem value="1-8-9">1.8.9</MineSelectItem>
+                  </MineSelectContent>
+                </MineSelect>
+              </div>
+              <div className="flex items-center justify-between rounded-md border border-mine-edge bg-mine-well p-3">
+                <MineLabel>Enable shaders</MineLabel>
+                <MineSwitch defaultChecked />
+              </div>
+              <MineTabs defaultValue="installed" className="w-full">
+                <MineTabsList className="w-full">
+                  <MineTabsTrigger value="installed">Installed</MineTabsTrigger>
+                  <MineTabsTrigger value="browse">Browse</MineTabsTrigger>
+                  <MineTabsTrigger value="settings">Settings</MineTabsTrigger>
+                </MineTabsList>
+                <MineTabsContent value="installed" className="text-sm text-muted-foreground">3 addons active</MineTabsContent>
+                <MineTabsContent value="browse" className="text-sm text-muted-foreground">Browse the Laby store</MineTabsContent>
+                <MineTabsContent value="settings" className="text-sm text-muted-foreground">Per-addon config</MineTabsContent>
+              </MineTabs>
+              <div className="flex items-center gap-2">
+                <MineDialog>
+                  <MineDialogTrigger asChild><MineButton size="sm" variant="secondary">Open MineDialog</MineButton></MineDialogTrigger>
+                  <MineDialogContent>
+                    <MineDialogHeader><MineDialogTitle>Install addon?</MineDialogTitle><MineDialogDescription>Token-driven, no hardcoded colors — Monocraft title.</MineDialogDescription></MineDialogHeader>
+                    <MineButton>Confirm</MineButton>
+                  </MineDialogContent>
+                </MineDialog>
+                <MineTooltipProvider>
+                  <MineTooltip>
+                    <MineTooltipTrigger asChild><MineButton size="sm" variant="slot">Hover tip</MineButton></MineTooltipTrigger>
+                    <MineTooltipContent>Block tooltip — well + edge</MineTooltipContent>
+                  </MineTooltip>
+                </MineTooltipProvider>
+                <MineSkeleton className="h-5 w-16" />
+              </div>
+            </div>
+          </Section>
+
           {/* ── Cording (Discord-inspired) ── */}
           <div className="rounded-xl border border-dashed bg-cord-guild/20 p-4">
             <div className="mb-1 flex items-center gap-2">
@@ -528,6 +656,60 @@ export default function App() {
                 <CordStatusDot status="streaming" />
                 <CordStatusDot status="offline" />
                 <span className="text-xs text-muted-foreground">presence</span>
+              </div>
+            </div>
+          </Section>
+
+          <Section title="CordForm · CordTabs · CordDialog" description="full kit: input/textarea/select/switch + tabs + dialog/tooltip">
+            <div className="grid w-[360px] gap-4">
+              <div className="grid gap-2">
+                <CordLabel>Server name</CordLabel>
+                <CordInput placeholder="My Discord Server" defaultValue="vomps — cording" />
+              </div>
+              <div className="grid gap-2">
+                <CordLabel>Channel topic</CordLabel>
+                <CordTextarea placeholder="What is this channel about?" defaultValue="gg sans body 15px — Discord topic copy." />
+              </div>
+              <div className="grid gap-2">
+                <CordLabel>Category</CordLabel>
+                <CordSelect defaultValue="general">
+                  <CordSelectTrigger><CordSelectValue /></CordSelectTrigger>
+                  <CordSelectContent>
+                    <CordSelectItem value="general">General</CordSelectItem>
+                    <CordSelectItem value="gaming">Gaming</CordSelectItem>
+                    <CordSelectItem value="music">Music</CordSelectItem>
+                  </CordSelectContent>
+                </CordSelect>
+              </div>
+              <div className="flex items-center justify-between rounded-md bg-cord-channel p-3">
+                <CordLabel>Community enabled</CordLabel>
+                <CordSwitch defaultChecked />
+              </div>
+              <CordTabs defaultValue="chat" className="w-full">
+                <CordTabsList>
+                  <CordTabsTrigger value="chat">Chat</CordTabsTrigger>
+                  <CordTabsTrigger value="voice">Voice</CordTabsTrigger>
+                  <CordTabsTrigger value="events">Events</CordTabsTrigger>
+                </CordTabsList>
+                <CordTabsContent value="chat" className="text-sm text-muted-foreground">gg sans chat — 16px/20px</CordTabsContent>
+                <CordTabsContent value="voice" className="text-sm text-muted-foreground">Low-latency voice</CordTabsContent>
+                <CordTabsContent value="events" className="text-sm text-muted-foreground">Scheduled events</CordTabsContent>
+              </CordTabs>
+              <div className="flex items-center gap-2">
+                <CordDialog>
+                  <CordDialogTrigger asChild><CordButton size="sm" variant="secondary">Open CordDialog</CordButton></CordDialogTrigger>
+                  <CordDialogContent>
+                    <CordDialogHeader><CordDialogTitle>Create channel</CordDialogTitle><CordDialogDescription>Ginto Nord display title · blurple focus ring.</CordDialogDescription></CordDialogHeader>
+                    <CordButton>Confirm</CordButton>
+                  </CordDialogContent>
+                </CordDialog>
+                <CordTooltipProvider>
+                  <CordTooltip>
+                    <CordTooltipTrigger asChild><CordButton size="sm" variant="secondary">Hover tip</CordButton></CordTooltipTrigger>
+                    <CordTooltipContent>Discord black tooltip</CordTooltipContent>
+                  </CordTooltip>
+                </CordTooltipProvider>
+                <CordSkeleton className="h-5 w-16" />
               </div>
             </div>
           </Section>

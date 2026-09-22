@@ -63,15 +63,28 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family:
-      ui-sans-serif,
-      system-ui,
-      -apple-system,
-      "Segoe UI",
-      Roboto,
-      "Helvetica Neue",
-      Arial,
-      sans-serif;
+    font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display, var(--font-sans));
+    letter-spacing: var(--tracking-display, -0.02em);
+  }
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family: var(--font-mono);
+  }
+  /* pixel-mode helper: any element with .font-pixel uses --font-pixel */
+  .font-pixel {
+    font-family: var(--font-pixel);
+    letter-spacing: 0.02em;
   }
 }
