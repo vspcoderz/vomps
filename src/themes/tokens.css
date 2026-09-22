@@ -30,6 +30,15 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
+  /* MineBricks extension tokens (values live in each theme file). */
+  --color-mine-grass: var(--mine-grass);
+  --color-mine-gold: var(--mine-gold);
+  --color-mine-diamond: var(--mine-diamond);
+  --color-mine-redstone: var(--mine-redstone);
+  --color-mine-amethyst: var(--mine-amethyst);
+  --color-mine-well: var(--mine-well);
+  --color-mine-edge: var(--mine-edge);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

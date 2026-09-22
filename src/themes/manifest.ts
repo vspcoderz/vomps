@@ -24,6 +24,12 @@ export const themes: VompsTheme[] = [
     description: "Blue-black base, electric violet accent. The original vomps identity.",
     default: true,
   },
+  {
+    id: "minebricks",
+    name: "MineBricks",
+    description:
+      "LabyMod-inspired client look: deep navy surfaces, brand blue #3f61ea, chunky block controls.",
+  },
 ];
 
 export const defaultThemeId: string =

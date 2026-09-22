@@ -36,6 +36,21 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui";
+import {
+  MineBadge,
+  MineButton,
+  MineCard,
+  MineCardContent,
+  MineCardDescription,
+  MineCardFooter,
+  MineCardHeader,
+  MineCardTitle,
+  MineProgress,
+  MineSlot,
+  MineSlotGrid,
+  MineWell,
+  MineXpShelf,
+} from "@/components/minebricks";
 import { applyTheme, defaultThemeId, themes } from "@/themes/manifest";
 
 function Section({
@@ -253,6 +268,144 @@ export default function App() {
                 <Skeleton className="h-9 w-24" />
                 <Skeleton className="h-9 w-24" />
               </div>
+            </div>
+          </Section>
+
+          {/* ── MineBricks ── */}
+          <div className="rounded-xl border border-dashed bg-mine-well/40 p-4">
+            <div className="mb-1 flex items-center gap-2">
+              <span className="font-mono text-xs font-bold tracking-[0.18em] text-mine-diamond">
+                MINEBRICKS
+              </span>
+              <span className="text-xs text-muted-foreground">
+                LabyMod-inspired block kit — token-driven, theme-aware
+              </span>
+              <MineBadge variant="diamond" pixel dot>
+                v1
+              </MineBadge>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Palette scraped from{" "}
+              <a className="underline underline-offset-4 hover:text-foreground" href="https://laby.net/client" target="_blank" rel="noreferrer">
+                laby.net/client
+              </a>
+              : brand #3f61ea, surfaces #0e111b→#282d3c, cat colors &amp; 3D block buttons. Switch to{" "}
+              <span className="font-semibold text-foreground">MineBricks</span> in the theme picker to see
+              the full Laby surfaces.
+            </p>
+          </div>
+
+          <Section title="MineButton" description="9 variants · 3D edge · pixel option">
+            <MineButton>Play</MineButton>
+            <MineButton variant="secondary">Options</MineButton>
+            <MineButton variant="slot">Slot</MineButton>
+            <MineButton variant="destructive">Quit</MineButton>
+            <MineButton variant="grass">Grass</MineButton>
+            <MineButton variant="gold">Gold</MineButton>
+            <MineButton variant="diamond">Diamond</MineButton>
+            <MineButton variant="redstone">Redstone</MineButton>
+            <MineButton variant="amethyst">Amethyst</MineButton>
+            <MineButton size="sm">Small</MineButton>
+            <MineButton size="lg">Large</MineButton>
+            <MineButton variant="primary" pixel>
+              PIXEL FONT
+            </MineButton>
+          </Section>
+
+          <Section title="MineCard + MineWell" description="Laby frame + well inset">
+            <MineCard className="w-[340px]">
+              <MineCardHeader>
+                <MineCardTitle pixel>One Client. Everything included.</MineCardTitle>
+                <MineCardDescription>
+                  100+ mods packed into one client with its own launcher — Laby&apos;s hero claim as a card.
+                </MineCardDescription>
+              </MineCardHeader>
+              <MineCardContent className="space-y-3">
+                <MineWell className="flex items-center justify-between text-xs">
+                  <span className="font-mono font-semibold tracking-wide">LabyMod 4</span>
+                  <MineBadge variant="grass" dot>
+                    5M+ users
+                  </MineBadge>
+                </MineWell>
+                <p className="text-sm text-muted-foreground">
+                  Surfaces use --card / --mine-well so the kit re-skins with the active theme.
+                </p>
+              </MineCardContent>
+              <MineCardFooter className="gap-2">
+                <MineButton size="sm">Download</MineButton>
+                <MineButton size="sm" variant="slot">
+                  Roadmap
+                </MineButton>
+              </MineCardFooter>
+            </MineCard>
+          </Section>
+
+          <Section title="MineSlot" description="Inventory slots · hotbar grid">
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <MineSlot>
+                  <span className="text-lg">⛏️</span>
+                </MineSlot>
+                <MineSlot count={64}>
+                  <span className="text-lg">🧱</span>
+                </MineSlot>
+                <MineSlot active count={12}>
+                  <span className="text-lg">💎</span>
+                </MineSlot>
+                <MineSlot size="sm">
+                  <span className="text-xs">i</span>
+                </MineSlot>
+                <MineSlot size="lg" interactive>
+                  <span className="text-xl">⚔️</span>
+                </MineSlot>
+              </div>
+              <MineWell className="p-2">
+                <MineSlotGrid>
+                  {Array.from({ length: 9 }).map((_, i) => (
+                    <MineSlot key={i} interactive={i === 4} active={i === 4}>
+                      {i === 1 ? "🗡️" : i === 4 ? "⛏️" : i === 7 ? "🍞" : ""}
+                    </MineSlot>
+                  ))}
+                </MineSlotGrid>
+              </MineWell>
+            </div>
+          </Section>
+
+          <Section title="MineBadge" description="Cat colors · dot · pixel">
+            <MineBadge variant="grass" dot>
+              Grass
+            </MineBadge>
+            <MineBadge variant="gold" dot>
+              Gold
+            </MineBadge>
+            <MineBadge variant="diamond" dot>
+              Diamond
+            </MineBadge>
+            <MineBadge variant="redstone" dot>
+              Redstone
+            </MineBadge>
+            <MineBadge variant="amethyst" dot>
+              Amethyst
+            </MineBadge>
+            <MineBadge variant="secondary">Secondary</MineBadge>
+            <MineBadge variant="outline">Outline</MineBadge>
+            <MineBadge variant="grass" pixel>
+              PIXEL GRASS
+            </MineBadge>
+            <MineBadge variant="diamond" pixel>
+              PIXEL DIA
+            </MineBadge>
+          </Section>
+
+          <Section title="MineProgress" description="XP bar + segmented shelf">
+            <div className="flex w-[360px] flex-col gap-4">
+              <MineProgress value={68} variant="grass" showLabel />
+              <MineProgress value={42} variant="diamond" />
+              <MineProgress value={88} variant="gold" striped showLabel />
+              <MineProgress value={54} variant="redstone" />
+              <MineProgress value={76} variant="amethyst" />
+              <MineXpShelf filled={7} segments={10} variant="grass" />
+              <MineXpShelf filled={4} segments={10} variant="diamond" />
             </div>
           </Section>
         </main>

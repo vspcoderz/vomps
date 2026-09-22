@@ -1,0 +1,76 @@
+/*
+ * vomps theme: minebricks  (theme 2 of 5–10)
+ * --------------------------------------------------
+ * "MineBricks" — Labymod-official-website-inspired Minecraft client look.
+ *
+ * Scraped from https://laby.net/client (LabyMedia GmbH, inspected Sep 2026):
+ * the site's compiled CSS defines its palette as custom properties:
+ *
+ *   --brand-500:#3f61ea  --brand-600:#2e4ad1  --brand-700:#243bb2
+ *   --brand-800:#1a2c77  --brand-100:#e3ebff
+ *   --surface-0:#0e111b  --surface-1:#161a25
+ *   --surface-2:#1f2430  --surface-3:#282d3c
+ *   --edge-1:#2f3545     --edge-2:#424a5e
+ *   --text-foreground:#f9fafe  --text-body:#dbdee5
+ *   --text-muted:#9fa4b2       --text-placeholder:#7b808d
+ *   --cat-grass:#54bf5c  --cat-gold:#e9ab2b  --cat-diamond:#58d1e5
+ *   --cat-redstone:#e9504d     --cat-amethyst:#a672dc
+ *   --well-floor:#060911  --outline:#04060b
+ *   --btn-primary-face:#3f61ea  --btn-primary-bottom:#243b9c
+ *   --radius-card:8px  --radius-slot:6px  --radius-hero:16px
+ *   --lui-font-pixel:"Monocraft",ui-monospace,monospace
+ *   <meta name="theme-color" content="#141515">
+ *
+ * Mapping below translates those surfaces into vomps core tokens so EVERY
+ * existing component re-skins with zero component edits. The extra
+ * `--mine-*` tokens power the MineBricks component set
+ * (`src/components/minebricks/`) and are also defined (with fallbacks)
+ * in `vomp-dark.css` so MineBricks render in every theme.
+ */
+
+:root[data-theme="minebricks"] {
+  color-scheme: dark;
+
+  /* base surfaces — Laby surface-0 → surface-2 */
+  --background: #0e111b;
+  --foreground: #f9fafe;
+
+  --card: #161a25;
+  --card-foreground: #f9fafe;
+
+  --popover: #1f2430;
+  --popover-foreground: #f9fafe;
+
+  /* brand — Laby brand-500 */
+  --primary: #3f61ea;
+  --primary-foreground: #ffffff;
+
+  --secondary: #282d3c;
+  --secondary-foreground: #dbdee5;
+
+  --muted: #1f2430;
+  --muted-foreground: #9fa4b2;
+
+  /* blue-tinted hover surface — brand-800 face, brand-100 text */
+  --accent: #1a2c77;
+  --accent-foreground: #e3ebff;
+
+  --destructive: #e9504d;
+  --destructive-foreground: #ffffff;
+
+  --border: #2f3545;
+  --input: #424a5e;
+  --ring: #3f61ea;
+
+  /* Laby card radius */
+  --radius: 0.5rem;
+
+  /* MineBricks extension tokens (mapped in tokens.css) */
+  --mine-grass: #54bf5c;
+  --mine-gold: #e9ab2b;
+  --mine-diamond: #58d1e5;
+  --mine-redstone: #e9504d;
+  --mine-amethyst: #a672dc;
+  --mine-well: #060911;
+  --mine-edge: #04060b;
+}
