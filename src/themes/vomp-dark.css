@@ -1,0 +1,49 @@
+/*
+ * vomps theme: vomp-dark  (theme 1 of 5–10)
+ * --------------------------------------------------
+ * The ONE place colors are defined. Components never hardcode colors,
+ * they only consume these tokens via Tailwind utilities
+ * (bg-background, text-primary, border-border, ...).
+ *
+ * To add a future theme: create themes/<name>.css with the same token
+ * names on :root[data-theme="<name>"] — no component changes needed.
+ * See docs/theming.md.
+ */
+
+:root,
+:root[data-theme="vomp-dark"] {
+  color-scheme: dark;
+
+  /* base surfaces — blue-black */
+  --background: #0a0a0f;
+  --foreground: #ededf2;
+
+  --card: #13131a;
+  --card-foreground: #ededf2;
+
+  --popover: #16161f;
+  --popover-foreground: #ededf2;
+
+  /* brand — electric violet */
+  --primary: #8b5cf6;
+  --primary-foreground: #ffffff;
+
+  --secondary: #1c1c26;
+  --secondary-foreground: #ededf2;
+
+  --muted: #17171f;
+  --muted-foreground: #9a9aa8;
+
+  /* violet-tinted hover surface */
+  --accent: #232038;
+  --accent-foreground: #f4f2ff;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #26262f;
+  --input: #21212a;
+  --ring: #8b5cf6;
+
+  --radius: 0.625rem;
+}
